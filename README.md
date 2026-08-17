@@ -1,6 +1,6 @@
 # threadworksoftware.com
 
-Corporate site for Threadwork Software, Inc. One page, static, no CMS.
+Corporate site for Threadwork Software, Inc.
 
 Its job is credibility: OpenSCORM buyers who want to know whether there is a real company behind the product should be
 able to answer that in under a minute.
