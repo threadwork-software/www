@@ -1,0 +1,66 @@
+---
+import Section from '~/components/Section.astro';
+
+import { ENTITY, PRODUCT, SITE } from '~/config';
+
+const milestones = [
+  {
+    date: '2006',
+    title: 'The company is incorporated in Alberta, Canada',
+    body: 'Formed to do consulting work for organizations that deliver training. This is the incorporation date the corporate register still carries today.',
+  },
+  {
+    date: '2006 to 2025',
+    title: 'Two decades of consulting',
+    body: 'Nineteen years of client work across private employers, government departments, and professional associations. Different clients, one recurring problem: getting training content to learners and getting a defensible record back.',
+  },
+  {
+    date: PRODUCT.betaDate,
+    title: `${PRODUCT.name} enters private beta`,
+    body: 'We released the platform to a small, selected group of existing clients. Real courses, real learners, real compliance deadlines, on the understanding that it was early.',
+  },
+  {
+    date: 'Late 2025 through mid 2026',
+    title: 'Refinement on pilot feedback',
+    body: 'Twelve months of changes driven by what the pilot group hit in practice rather than by a roadmap written in advance.',
+  },
+  {
+    date: ENTITY.renamedOnLabel,
+    title: 'The company adopts the Threadwork Software name',
+    body: `A name change to the existing corporation, not a new company: the same registration and the same ${ENTITY.incorporated} incorporation date carry forward unchanged. threadworksoftware.com was registered eight days earlier, which is why the domain is younger than the business by twenty years.`,
+  },
+  {
+    date: PRODUCT.launchDate,
+    title: `${PRODUCT.name} launches globally`,
+    body: `General availability, announced publicly, with its own site at ${PRODUCT.url.replace('https://', '')}.`,
+  },
+];
+---
+
+<Section
+  id="history"
+  eyebrow="History"
+  title={`From ${SITE.foundingDate} to a shipped product`}
+  lead="A product is easy to launch and hard to stand behind. This is the record of what came before OpenSCORM, because that is the part that tells you whether the company will still be here when your audit is."
+>
+  <ol class="mt-12 space-y-0">
+    {
+      milestones.map((milestone, index) => (
+        <li class="relative grid grid-cols-[auto_1fr] gap-x-5 pb-10 last:pb-0 md:grid-cols-[10rem_auto_1fr] md:gap-x-8">
+          <p class="hidden pt-0.5 text-right font-semibold text-slate-900 md:block dark:text-white">{milestone.date}</p>
+
+          <div class="flex flex-col items-center">
+            <span class="mt-1 h-3.5 w-3.5 shrink-0 rounded-full bg-brand ring-4 ring-brand-soft dark:ring-brand/25" />
+            {index < milestones.length - 1 && <span class="mt-1 w-px grow bg-slate-200 dark:bg-slate-800" />}
+          </div>
+
+          <div>
+            <p class="font-semibold text-brand md:hidden dark:text-brand-light">{milestone.date}</p>
+            <h3 class="mt-1 text-lg font-semibold text-slate-900 md:mt-0 dark:text-white">{milestone.title}</h3>
+            <p class="mt-2 max-w-2xl leading-relaxed text-slate-600 dark:text-slate-400">{milestone.body}</p>
+          </div>
+        </li>
+      ))
+    }
+  </ol>
+</Section>

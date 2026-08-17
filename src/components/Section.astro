@@ -1,0 +1,33 @@
+---
+export interface Props {
+  id?: string;
+  eyebrow?: string;
+  title?: string;
+  lead?: string;
+  class?: string;
+  containerClass?: string;
+}
+
+const { id, eyebrow, title, lead, class: className = '', containerClass = '' } = Astro.props;
+---
+
+<section id={id} class:list={['relative', className]}>
+  <div class:list={['mx-auto max-w-6xl px-5 py-16 md:px-8 md:py-24', containerClass]}>
+    {
+      (eyebrow || title || lead) && (
+        <header class="max-w-3xl">
+          {eyebrow && (
+            <p class="mb-3 text-sm font-semibold uppercase tracking-widest text-brand dark:text-brand-light">
+              {eyebrow}
+            </p>
+          )}
+          {title && (
+            <h2 class="text-3xl font-bold tracking-tight text-slate-900 md:text-4xl dark:text-white">{title}</h2>
+          )}
+          {lead && <p class="mt-5 text-lg leading-relaxed text-slate-600 dark:text-slate-400">{lead}</p>}
+        </header>
+      )
+    }
+    <slot />
+  </div>
+</section>

@@ -1,0 +1,62 @@
+---
+import '~/assets/styles/tailwind.css';
+import '@fontsource-variable/inter';
+
+import { SEO } from 'astro-seo';
+
+import { METADATA, SITE } from '~/config';
+
+export interface Props {
+  title?: string;
+  description?: string;
+  noindex?: boolean;
+}
+
+const { title = METADATA.title, description = METADATA.description, noindex = false } = Astro.props;
+
+const canonical = new URL(Astro.url.pathname, Astro.site ?? SITE.url).toString();
+---
+
+<!doctype html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="generator" content={Astro.generator} />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="sitemap" href="/sitemap-index.xml" />
+
+    <SEO
+      title={title}
+      description={description}
+      canonical={canonical}
+      noindex={noindex}
+      nofollow={noindex}
+      openGraph={{
+        basic: {
+          title,
+          type: 'website',
+          url: canonical,
+          image: `${SITE.url}/og.png`,
+        },
+        optional: {
+          siteName: SITE.name,
+          description,
+        },
+      }}
+      twitter={{ card: 'summary_large_image' }}
+    />
+
+    <slot name="head" />
+  </head>
+
+  <body class="bg-white text-slate-700 antialiased tracking-tight dark:bg-slate-950 dark:text-slate-300">
+    <a
+      href="#main"
+      class="sr-only focus:not-sr-only focus:absolute focus:left-4 focus:top-4 focus:z-50 focus:rounded-md focus:bg-brand focus:px-4 focus:py-2 focus:text-white"
+    >
+      Skip to content
+    </a>
+    <slot />
+  </body>
+</html>

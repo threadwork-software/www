@@ -1,0 +1,49 @@
+---
+import { NAV, PRODUCT, SITE } from '~/config';
+
+const year = new Date().getFullYear();
+---
+
+<footer class="border-t border-slate-200 bg-white dark:border-slate-800 dark:bg-slate-950">
+  <div class="mx-auto max-w-6xl px-5 py-12 md:px-8">
+    <div class="flex flex-col gap-8 md:flex-row md:items-start md:justify-between">
+      <div class="max-w-sm">
+        <p class="text-base font-bold text-slate-900 dark:text-white">{SITE.legalName}</p>
+        <p class="mt-2 text-sm leading-relaxed text-slate-600 dark:text-slate-400">
+          Incorporated in {SITE.foundingLocation}, {SITE.foundingDate}. IT consulting for training, compliance, and
+          professional development.
+        </p>
+      </div>
+
+      <nav aria-label="Footer">
+        <ul class="flex flex-wrap gap-x-6 gap-y-2">
+          {
+            NAV.map((item) => (
+              <li>
+                <a
+                  href={item.href}
+                  class="text-sm text-slate-600 transition hover:text-brand dark:text-slate-400 dark:hover:text-brand-light"
+                >
+                  {item.label}
+                </a>
+              </li>
+            ))
+          }
+          <li>
+            <a
+              href={PRODUCT.url}
+              class="text-sm text-slate-600 transition hover:text-brand dark:text-slate-400 dark:hover:text-brand-light"
+            >
+              {PRODUCT.url.replace('https://', '')}
+            </a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+
+    <p class="mt-10 border-t border-slate-200 pt-6 text-sm text-slate-500 dark:border-slate-800 dark:text-slate-500">
+      &copy; {year}
+      {SITE.legalName} All rights reserved.
+    </p>
+  </div>
+</footer>

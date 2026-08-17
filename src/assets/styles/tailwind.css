@@ -1,0 +1,62 @@
+@import 'tailwindcss';
+
+@theme {
+  /*
+   * This var() call must stay unquoted. Quoting a font family name here makes
+   * it a literal rather than a variable reference, so it matches nothing and
+   * the stack silently falls through to system-ui. That is the failure that
+   * broke Inter in openscorm/www's Tailwind v4 migration.
+   */
+  --font-sans:
+    'Inter Variable', ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol',
+    'Noto Color Emoji';
+
+  /* Accent. Change these five values and the whole site follows. */
+  --color-brand: #1d4ed8;
+  --color-brand-hover: #1e40af;
+  --color-brand-soft: #dbeafe;
+  --color-brand-light: #93b4fd;
+  --color-brand-deep: #172554;
+
+  --animate-fade: fadeInUp 0.5s both;
+
+  @keyframes fadeInUp {
+    0% {
+      opacity: 0;
+      transform: translateY(1rem);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+  }
+
+  ::selection {
+    background-color: var(--color-brand-soft);
+    color: #0f172a;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    ::selection {
+      background-color: var(--color-brand-hover);
+      color: #ffffff;
+    }
+  }
+
+  /* Anchor targets clear the sticky header instead of hiding under it. */
+  [id] {
+    scroll-margin-top: 5rem;
+  }
+}

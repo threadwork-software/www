@@ -1,0 +1,44 @@
+---
+import { Icon } from 'astro-icon/components';
+
+import Section from '~/components/Section.astro';
+
+import { PRODUCT, SITE } from '~/config';
+---
+
+<Section
+  id="contact"
+  eyebrow="Contact"
+  title="Talk to us"
+  lead="Consulting inquiries, partnership questions, and anything about the company behind the product."
+>
+  <div class="mt-10 grid gap-6 md:grid-cols-2">
+    <a
+      href={`mailto:${SITE.email}`}
+      class="group rounded-xl border border-slate-200 bg-white p-7 transition hover:border-brand/40 dark:border-slate-800 dark:bg-slate-900/50 dark:hover:border-brand-light/40"
+    >
+      <span
+        class="inline-flex h-10 w-10 items-center justify-center rounded-lg bg-brand-soft text-brand dark:bg-brand/20 dark:text-brand-light"
+      >
+        <Icon name="tabler:mail" class="h-5 w-5" aria-hidden="true" />
+      </span>
+      <h3 class="mt-5 text-lg font-semibold text-slate-900 dark:text-white">Email the company</h3>
+      <p class="mt-2 font-mono text-brand transition group-hover:underline dark:text-brand-light">{SITE.email}</p>
+    </a>
+
+    <a
+      href={PRODUCT.url}
+      class="group rounded-xl border border-slate-200 bg-white p-7 transition hover:border-brand/40 dark:border-slate-800 dark:bg-slate-900/50 dark:hover:border-brand-light/40"
+    >
+      <span
+        class="inline-flex h-10 w-10 items-center justify-center rounded-lg bg-brand-soft text-brand dark:bg-brand/20 dark:text-brand-light"
+      >
+        <Icon name="tabler:lifebuoy" class="h-5 w-5" aria-hidden="true" />
+      </span>
+      <h3 class="mt-5 text-lg font-semibold text-slate-900 dark:text-white">{PRODUCT.name} support and sales</h3>
+      <p class="mt-2 text-slate-600 dark:text-slate-400">
+        Product questions are handled on the {PRODUCT.name} site
+      </p>
+    </a>
+  </div>
+</Section>

@@ -1,0 +1,50 @@
+---
+import { Icon } from 'astro-icon/components';
+
+import { PRODUCT } from '~/config';
+
+const points = [
+  'Open source, so the delivery engine your compliance record depends on is not a black box',
+  'Built from twenty years of watching training teams fight the same problems',
+  'Operated by the same company that wrote it, not resold',
+];
+---
+
+<section id="openscorm" class="bg-brand-deep text-white dark:bg-slate-900">
+  <div class="mx-auto max-w-6xl px-5 py-16 md:px-8 md:py-24">
+    <div class="grid items-start gap-12 lg:grid-cols-2">
+      <div>
+        <p class="text-sm font-semibold uppercase tracking-widest text-brand-light">Our product</p>
+        <h2 class="mt-3 text-3xl font-bold tracking-tight md:text-4xl">{PRODUCT.name}</h2>
+        <p class="mt-5 text-lg leading-relaxed text-slate-300">
+          {PRODUCT.name} is an open-source SCORM content delivery platform. Upload a course, deliver it through an existing
+          LMS or with no LMS at all, and keep a completion record you can hand to an auditor.
+        </p>
+        <p class="mt-4 leading-relaxed text-slate-400">
+          It went to a private group of our own clients in {PRODUCT.betaDate} and launched globally in {
+            PRODUCT.launchDate
+          }.
+        </p>
+
+        <a
+          href={PRODUCT.url}
+          class="mt-8 inline-flex items-center gap-2 rounded-full bg-white px-6 py-3 text-base font-semibold text-brand-deep transition hover:bg-brand-soft"
+        >
+          Go to {PRODUCT.url.replace('https://', '')}
+          <Icon name="tabler:arrow-up-right" class="h-4 w-4" aria-hidden="true" />
+        </a>
+      </div>
+
+      <ul class="space-y-4 lg:pt-16">
+        {
+          points.map((point) => (
+            <li class="flex items-start gap-3 rounded-lg bg-white/5 p-5 ring-1 ring-white/10">
+              <Icon name="tabler:check" class="mt-1 h-5 w-5 shrink-0 text-brand-light" aria-hidden="true" />
+              <span class="leading-relaxed text-slate-200">{point}</span>
+            </li>
+          ))
+        }
+      </ul>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,49 @@
+---
+import { Icon } from 'astro-icon/components';
+
+import Section from '~/components/Section.astro';
+
+const services = [
+  {
+    icon: 'tabler:map-2',
+    title: 'Consulting and architecture',
+    body: 'We work with people who own a training or compliance mandate and need the technology behind it to hold up. That starts with understanding the obligation, not the software.',
+  },
+  {
+    icon: 'tabler:code',
+    title: 'Custom software',
+    body: 'Applications built for a specific department and a specific process, in cases where the off-the-shelf product would need more configuration than construction.',
+  },
+  {
+    icon: 'tabler:plug-connected',
+    title: 'Systems integration',
+    body: 'Learning systems rarely stand alone. They exchange records with HR systems, membership databases, payroll, and reporting, and the joins are where compliance data goes wrong.',
+  },
+  {
+    icon: 'tabler:database-cog',
+    title: 'Data and reporting',
+    body: 'Completion records are evidence. We build the reporting that lets an organization answer an auditor with a query rather than a spreadsheet reconstruction.',
+  },
+];
+---
+
+<Section
+  id="what-we-do"
+  eyebrow="What we do"
+  title="An IT consultancy with one specialty"
+  lead="Threadwork has always been a small firm doing serious work. Clients bring us problems where the deadline is set by a regulator, an accreditation body, or an audit, and the software has to be right the first time."
+>
+  <div class="mt-12 grid gap-6 sm:grid-cols-2">
+    {
+      services.map((service) => (
+        <article class="rounded-xl border border-slate-200 bg-white p-7 transition hover:border-brand/40 dark:border-slate-800 dark:bg-slate-900/50 dark:hover:border-brand-light/40">
+          <span class="inline-flex h-11 w-11 items-center justify-center rounded-lg bg-brand-soft text-brand dark:bg-brand/20 dark:text-brand-light">
+            <Icon name={service.icon} class="h-6 w-6" aria-hidden="true" />
+          </span>
+          <h3 class="mt-5 text-xl font-semibold text-slate-900 dark:text-white">{service.title}</h3>
+          <p class="mt-3 leading-relaxed text-slate-600 dark:text-slate-400">{service.body}</p>
+        </article>
+      ))
+    }
+  </div>
+</Section>
