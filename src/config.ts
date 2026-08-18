@@ -10,7 +10,10 @@ export const SITE = {
   foundingDate: '2006',
   foundingLocation: 'Alberta, Canada',
 
-  // ASSUMPTION, confirm before launch. Nothing else in the repo hardcodes it.
+  // Confirmed delivering 2026-08-18 (Dan): routes to daniel@threadworksoftware.com
+  // through the domain's Google Workspace mail. Nothing else in the repo
+  // hardcodes it. This is the only contact route the site publishes, so an
+  // address that bounces would defeat the page's whole purpose (OQ-482).
   email: 'hello@threadworksoftware.com',
 } as const;
 
