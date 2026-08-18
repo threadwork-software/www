@@ -50,18 +50,22 @@ function field(object, key) {
 }
 
 const name = field('SITE', 'name');
-const foundingDate = field('SITE', 'foundingDate');
-const foundingLocation = field('SITE', 'foundingLocation');
 const productName = field('PRODUCT', 'name');
 const title = field('METADATA', 'title');
+const jurisdiction = field('ENTITY', 'jurisdiction');
+const registryLabel = field('ENTITY', 'registryLabel');
+const registryNumber = field('ENTITY', 'registryNumber');
 
 // The card prints only text the site already publishes, so it makes no claim of
 // its own: the wordmark, the tagline half of the existing <title>, and the
-// hero's incorporation badge. Content authority for this site sits with Kyle,
-// and restating published copy keeps a rendering task from becoming an editing
-// one.
+// hero's entity badge. Content authority for this site sits with Kyle, and
+// restating published copy keeps a rendering task from becoming an editing one.
+//
+// BROAD READING of OQ-458 ruling 1: the chip carries the jurisdiction and the
+// registry number, matching the hero badge, rather than the founding year. Same
+// change, same reason, in the one place a reader sees before they reach the page.
 const tagline = title.includes(':') ? title.slice(title.indexOf(':') + 1).trim() : title;
-const incorporated = `Incorporated in ${foundingLocation}, ${foundingDate}`;
+const entity = `${jurisdiction} · ${registryLabel} ${registryNumber}`;
 const product = `We build and operate ${productName}`;
 
 // Brand tokens, mirroring src/assets/styles/tailwind.css. Duplicated rather than
@@ -192,7 +196,7 @@ const svg = `<svg xmlns="http://www.w3.org/2000/svg" width="${WIDTH}" height="${
   <!-- The one fact a diligence reader is here to check, in the accent color. -->
   <g transform="translate(${MARGIN}, ${chipTop})">
     <rect width="5" height="46" rx="2.5" fill="${BRAND}" />
-    <text x="26" y="33" font-family="${FONT}" font-size="30" font-weight="600" fill="${BRAND}">${escapeXml(incorporated)}</text>
+    <text x="26" y="33" font-family="${FONT}" font-size="30" font-weight="600" fill="${BRAND}">${escapeXml(entity)}</text>
   </g>
 
   <rect y="${HEIGHT - 12}" width="${WIDTH}" height="12" fill="${BRAND}" />
@@ -216,7 +220,7 @@ const placed = [
   ['wordmark', name, 44, 700, 200],
   ...headline.lines.map((line, i) => [`headline line ${i + 1}`, line, headline.size, 700, MARGIN]),
   ['product line', product, 34, 400, MARGIN],
-  ['incorporation line', incorporated, 30, 600, MARGIN + 26],
+  ['entity line', entity, 30, 600, MARGIN + 26],
 ];
 
 let widestEdge = 0;

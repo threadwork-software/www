@@ -69,10 +69,19 @@ export const PRODUCT = {
  * one copy of the text.
  */
 export const PROVENANCE_FAQ = [
+  // BROAD READING of OQ-458 ruling 1. This entry used to ask how long the
+  // company had been in business and answer "Since 2006", which made duration
+  // the lead claim of both the visible Verify block and the FAQPage structured
+  // data. It now answers the question a diligence reader is actually asking,
+  // whether this is a company formed last year, using the facts on the approved
+  // OQ-423 list: entity, jurisdiction, registration number, and the rename.
+  //
+  // Parity is automatic, as before: this one array feeds the visible copy and
+  // the JSON-LD, so they cannot drift.
   {
-    question: 'How long has Threadwork Software been in business?',
+    question: 'Is Threadwork Software a newly formed company?',
     answer:
-      'Since 2006. The corporation was registered in Alberta, Canada on February 16, 2006 under Alberta corporate access number 2012239469, and has operated continuously since. It adopted the Threadwork Software name in January 2026, which was a name change to an existing company rather than the formation of a new one: the same corporation, the same access number, and the same 2006 incorporation date.',
+      'No. It is an existing Alberta corporation, registered in Alberta, Canada under Alberta corporate access number 2012239469, and it has operated continuously since registration. It adopted the Threadwork Software name in January 2026, which was a name change to an existing company rather than the formation of a new one: the same corporation, the same access number, and the same incorporation date carry forward. The registry entry is the record to check.',
   },
   {
     question: 'Why was threadworksoftware.com only registered in 2026?',

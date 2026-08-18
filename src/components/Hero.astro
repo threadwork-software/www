@@ -1,9 +1,23 @@
 ---
 import { Icon } from 'astro-icon/components';
 
-import { PRODUCT, SITE } from '~/config';
+import { ENTITY, METADATA, PRODUCT, SITE } from '~/config';
 
-const years = new Date().getFullYear() - Number(SITE.foundingDate);
+// BROAD READING of OQ-458 ruling 1: this page no longer leans on the
+// incorporation date as a narrative. The approved OQ-423 fact list is entity
+// name, jurisdiction, registration number, named founders, and public AGPL
+// code, so the badge carries the jurisdiction and the registry number instead
+// of the founding year.
+//
+// The year is not hidden. It stays in the Verify block as a record to look up,
+// which is the checkability the ruling was protecting. What goes is the claim
+// built on top of it, and with it the `years` arithmetic this file used to do.
+//
+// The headline reuses the tagline half of the approved page title rather than
+// new copy, so nothing here asserts anything the site did not already say.
+const headline = METADATA.title.includes(':')
+  ? METADATA.title.slice(METADATA.title.indexOf(':') + 1).trim()
+  : METADATA.title;
 ---
 
 <section class="relative overflow-hidden border-b border-slate-200 dark:border-slate-800">
@@ -18,18 +32,20 @@ const years = new Date().getFullYear() - Number(SITE.foundingDate);
       class="inline-flex items-center gap-2 rounded-full border border-brand/25 bg-white/70 px-3.5 py-1.5 text-sm font-medium text-brand dark:border-brand-light/25 dark:bg-slate-900/70 dark:text-brand-light"
     >
       <Icon name="tabler:building-arch" class="h-4 w-4" aria-hidden="true" />
-      Incorporated in {SITE.foundingLocation}, {SITE.foundingDate}
+      {ENTITY.jurisdiction} · {ENTITY.registryLabel}
+      {ENTITY.registryNumber}
     </p>
 
     <h1
       class="mt-7 max-w-4xl text-4xl font-bold leading-tight tracking-tight text-slate-900 md:text-6xl dark:text-white"
     >
-      {years} years of building software for training and compliance teams
+      {headline}
     </h1>
 
     <p class="mt-7 max-w-2xl text-lg leading-relaxed text-slate-600 md:text-xl dark:text-slate-400">
-      {SITE.legalName} is a Canadian IT consultancy. Since {SITE.foundingDate} our work has concentrated in one domain: training
-      and education. In {PRODUCT.launchDate} we launched {PRODUCT.name}, built on everything that came before it.
+      {SITE.legalName} is a Canadian IT consultancy. Our work concentrates in one domain: training and education. In {
+        PRODUCT.launchDate
+      } we launched {PRODUCT.name}, built on everything that came before it.
     </p>
 
     <div class="mt-10 flex flex-wrap items-center gap-4">
