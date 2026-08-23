@@ -82,7 +82,7 @@ export const PROVENANCE_FAQ = [
   {
     question: 'Is Threadwork Software the company behind OpenSCORM?',
     answer:
-      'Yes. OpenSCORM is developed and operated by Threadwork Software, Inc. It went to a private beta group of existing clients in July 2025 and launched globally in July 2026. The company is not reselling a platform built by somebody else.',
+      'Yes. OpenSCORM was founded by Kyle Erickson and Dan Miller and is developed and operated by Threadwork Software, Inc. It went to a private beta group of existing clients in July 2025 and launched globally in July 2026. The company is not reselling a platform built by somebody else.',
   },
   {
     question: 'Where is Threadwork Software located?',
