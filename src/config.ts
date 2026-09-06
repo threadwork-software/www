@@ -43,16 +43,17 @@ export const ENTITY = {
   registryLabel: 'Alberta corporate access number',
   registryAuthority: 'Alberta Corporate Registry',
 
-  // ISO for the verification table, where every value is a record to look up.
-  // Spelled out for the timeline, where it is prose.
+  // Kept as the record even though no component renders them: the Verify table
+  // dropped the rename date (a reader who cares can pull it from the registry),
+  // and the timeline rounds it to the month ("January 2026") as a literal.
   renamedOnIso: '2026-01-21',
   renamedOnLabel: 'January 21, 2026',
   domainRegisteredIso: '2026-01-13',
   domainRegisteredLabel: 'January 13, 2026',
 
-  // The gap between those two dates is written as a word ("eight days") in both
-  // PROVENANCE_FAQ and Timeline.astro, because it reads as prose in each. Change
-  // either date and both sentences need the new number.
+  // The gap between those two dates is written as a word ("eight days") in
+  // PROVENANCE_FAQ, because it reads as prose there. Change either date and
+  // that sentence needs the new number.
 } as const;
 
 export const PRODUCT = {

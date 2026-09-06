@@ -16,7 +16,6 @@ const facts = [
   { term: 'Incorporated', value: ENTITY.incorporatedIso, mono: true },
   { term: 'Register', value: ENTITY.registryAuthority, mono: false },
   ...(ENTITY.registryNumber ? [{ term: ENTITY.registryLabel, value: ENTITY.registryNumber, mono: true }] : []),
-  { term: 'Current name adopted', value: ENTITY.renamedOnIso, mono: true },
 ];
 ---
 
