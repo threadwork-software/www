@@ -76,19 +76,19 @@ export const PROVENANCE_FAQ = [
       'Since 2006. The corporation was registered in Alberta, Canada on February 16, 2006 under Alberta corporate access number 2012239469, and has operated continuously since. It adopted the Threadwork Software name in January 2026, which was a name change to an existing company rather than the formation of a new one: the same corporation, the same access number, and the same 2006 incorporation date.',
   },
   {
-    question: 'Why was threadworksoftware.com only registered in 2026?',
+    question: 'Why was the domain threadworksoftware.com registered in 2026?',
     answer:
-      'Because the name dates from 2026 and a domain follows its name. threadworksoftware.com was registered on January 13, 2026, eight days before the company adopted the name. Domain age measures a domain. The corporate register measures the company, and that is the record to check.',
+      'Because the name dates from 2026 and a domain follows its name. threadworksoftware.com was secured on January 13, 2026, eight days before the company adopted its new name. Domain age measures a domain. The corporate register measures the company, and that is the record to check.',
   },
   {
     question: 'Is Threadwork Software the company behind OpenSCORM?',
     answer:
-      'Yes. OpenSCORM was founded by Kyle Erickson and Dan Miller and is developed and operated by Threadwork Software, Inc. It went to a private beta group of existing clients in July 2025 and launched globally in July 2026. The company is not reselling a platform built by somebody else.',
+      'Yes. OpenSCORM was founded by Kyle Erickson and Daniel Miller and is developed and operated by Threadwork Software, Inc. It went to a private beta group of existing clients in July 2025 and launched globally in July 2026. The company is not reselling a platform built by somebody else. Nor is the platform new in 2026.',
   },
   {
     question: 'Where is Threadwork Software located?',
     answer:
-      'Alberta, Canada. The company is Canadian, incorporated and registered in Alberta, and has worked with clients in the private sector, the public sector, and non-profit associations.',
+      'Calgary. The company is Canadian, incorporated and registered in Alberta, and has worked with clients in the private sector, the public sector, and non-profit associations.',
   },
 ] as const;
 
