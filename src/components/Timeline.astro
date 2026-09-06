@@ -5,29 +5,34 @@ import { ENTITY, PRODUCT, SITE } from '~/config';
 
 const milestones = [
   {
-    date: '2006',
+    date: ENTITY.incorporated,
     title: 'The company is incorporated in Alberta, Canada',
-    body: 'Formed to do consulting work for organizations that deliver training. This is the incorporation date the corporate register still carries today.',
+    body: 'Formed to do consulting work for organizations that deliver training. This is the incorporation date the corporate register still carries today, in case your due diligence requires it.',
   },
   {
     date: '2006 to 2025',
     title: 'Two decades of consulting',
-    body: 'Nineteen years of client work across private employers, government departments, and professional associations. Different clients, one recurring problem: getting training content to learners and getting a defensible record back.',
+    body: 'Nineteen years of client work across private employers, government departments, and professional associations. Different clients, one recurring problem: delivering training content to learners and tracking a defensible record of competencies and certifications.',
   },
   {
     date: PRODUCT.betaDate,
     title: `${PRODUCT.name} enters private beta`,
-    body: 'We released the platform to a small, selected group of existing clients. Real courses, real learners, real compliance deadlines, on the understanding that it was early.',
+    body: 'We released the platform to a small, selected group of existing clients. Real courses, real learners, real compliance deadlines. We knew we could deliver SCORM content better and more cost-effectively than other vendors, and our clients trusted us enough to allow us the opportunity to prove it. Which we did.',
   },
   {
-    date: 'Late 2025 through mid 2026',
+    date: 'August 2025 to December 2025',
     title: 'Refinement on pilot feedback',
-    body: 'Twelve months of changes driven by what the pilot group hit in practice rather than by a roadmap written in advance.',
+    body: 'Five months of improvements driven by what the pilot group encountered in practice, rather than by a roadmap written in advance.',
   },
   {
-    date: ENTITY.renamedOnLabel,
-    title: 'The company adopts the Threadwork Software name',
-    body: `A name change to the existing corporation, not a new company: the same registration and the same ${ENTITY.incorporated} incorporation date carry forward unchanged. threadworksoftware.com was registered eight days earlier, which is why the domain is younger than the business by twenty years.`,
+    date: 'January 2026',
+    title: `The company adopts the name ${SITE.name}`,
+    body: `We registered the domain threadworksoftware.com and renamed the company to improve the alignment between our brand and our strategy going forward. The company is the same (only the name changed) so you can confirm our ${ENTITY.incorporated} incorporation date if longevity is part of your procurement due diligence.`,
+  },
+  {
+    date: 'January 2026 to June 2026',
+    title: 'Ongoing refinement on pilot feedback',
+    body: 'Another six months of improvements driven by a growing list of organizations joining the pilot.',
   },
   {
     date: PRODUCT.launchDate,
@@ -41,7 +46,7 @@ const milestones = [
   id="history"
   eyebrow="History"
   title={`From ${SITE.foundingDate} to a shipped product`}
-  lead="A product is easy to launch and hard to stand behind. This is the record of what came before OpenSCORM, because that is the part that tells you whether the company will still be here when your audit is."
+  lead="These days, a product is easy to launch, but it is not always easy to stand behind. Our company has a long and proven track record, so you can rest assured the company will still be here when your next audit comes due."
 >
   <ol class="mt-12 space-y-0">
     {
