@@ -2,7 +2,7 @@
   "name": "threadwork-software-www",
   "version": "1.0.0",
   "description": "Corporate site for Threadwork Software, Inc. Astro v6 + Tailwind CSS v4, deployed to GitHub Pages.",
-  "homepage": "https://www.threadworksoftware.com",
+  "homepage": "https://threadworksoftware.com",
   "repository": {
     "type": "git",
     "url": "https://github.com/threadwork-software/www.git"

@@ -11,7 +11,7 @@ import tailwindcss from '@tailwindcss/vite';
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
 export default defineConfig({
-  site: 'https://www.threadworksoftware.com',
+  site: 'https://threadworksoftware.com',
   output: 'static',
 
   // build.format 'directory' serves /page/ and 301s /page to it. Emitting the

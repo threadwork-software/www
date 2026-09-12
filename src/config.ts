@@ -6,7 +6,7 @@
 export const SITE = {
   name: 'Threadwork Software',
   legalName: 'Threadwork Software, Inc.',
-  url: 'https://www.threadworksoftware.com',
+  url: 'https://threadworksoftware.com',
   foundingDate: '2006',
   foundingLocation: 'Alberta, Canada',
 

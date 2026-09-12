@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://www.threadworksoftware.com/sitemap-index.xml
+Sitemap: https://threadworksoftware.com/sitemap-index.xml
