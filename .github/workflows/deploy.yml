@@ -54,6 +54,11 @@ jobs:
       - name: Upload Pages artifact
         uses: actions/upload-pages-artifact@v5
         with:
+          # v5 tars the site excluding every top-level dot-entry, so anything
+          # like a .well-known path would drop out of the deploy with no error
+          # and no failed step (BUG-29). Nothing needs it today; this is here so
+          # that adding one later does not silently do nothing.
+          include-hidden-files: true
           path: ./dist
 
   deploy:
